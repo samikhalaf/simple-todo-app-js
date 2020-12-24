@@ -18,16 +18,29 @@ header {
   font-size: 1.5rem;
 }
 
-header,
-form {
+header {
   min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-form input,
-form button {
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.todo-input {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+.todo-button {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
@@ -44,4 +57,68 @@ form button {
 form button:hover {
   background: #1ad8d8;
   color: white;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+  width: 30rem;
+}
+
+.todo {
+  margin: 0.5rem 0 1rem 0;
+  background: white;
+  color: black;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.trash-button,
+.complete-button {
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.complete-button {
+  color: #40ee49;
+}
+
+.trash-button {
+  color: #b80558;
+}
+
+.complete-button:hover {
+  color: white;
+  background: #40ee49;
+  transition: all 0.3s ease;
+}
+
+.trash-button:hover {
+  color: white;
+  background: #b80558;
+  transition: all 0.3s ease;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
 }
