@@ -29,4 +29,4 @@ Maybe I'll add some cool features in the future, such as:
 
 Enjoy!
 
-![productivity-boost](https://d37oebn0w9ir6a.cloudfront.net/account_481/jim-carrey-emailing_74d84922ca0e923237428a9ed2848ce9.gif)
+![productivity-boost](https://media3.giphy.com/media/13GIgrGdslD9oQ/200.gif)
