@@ -19,20 +19,35 @@ body {
 }
 
 header {
-  font-size: 1.5rem;
-}
-
-header {
-  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  /* width: 50%; */
+  min-height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
+
+header h1,
+header h2 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+h2{
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
 /* FORM */
 
 form {
-  min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,14 +55,14 @@ form {
 
 .todo-input {
   padding: 0.5rem;
-  font-size: 2rem;
+  font-size: 1rem;
   border: none;
   background: white;
 }
 
 .todo-button {
   padding: 0.5rem;
-  font-size: 2rem;
+  font-size: 1  rem;
   border: none;
   background: white;
 }

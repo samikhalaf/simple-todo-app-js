@@ -11,9 +11,10 @@ todoList.addEventListener('click', deleteTodo)
 filterOption.addEventListener('click', filterTodo)
 
 // Functions
-function addTodo(event) {
+
+function addTodo(e) {
   // With this we prevent the form from submitting nowhere
-  event.preventDefault()
+  e.preventDefault()
 
   // Create div container for each task
   const todoDiv = document.createElement('div')
@@ -27,41 +28,41 @@ function addTodo(event) {
   saveLocalTodos(todoInput.value)
 
   newTodo.classList.add('todo-item')
-  todoDiv.append(newTodo)
+  todoDiv.appendChild(newTodo)
 
   // Clear todo input value
   todoInput.value = ''
 
-  //  Create completed button
+  // Create Completed Button
   const completedButton = document.createElement('button')
-  completedButton.innerHTML = '<i class="fas fa-check"></i>'
+  completedButton.innerHTML = `<i class="fas fa-check"></i>`
   completedButton.classList.add('complete-button')
   todoDiv.appendChild(completedButton)
 
-  // Trash button
+  // Create trash button
   const trashButton = document.createElement('button')
-  trashButton.innerHTML = '<i class="fas fa-trash"></i>'
+  trashButton.innerHTML = `<i class="fas fa-trash"></i>`
   trashButton.classList.add('trash-button')
   todoDiv.appendChild(trashButton)
 
-  // Append to list
+  // Attach final Todo
   todoList.appendChild(todoDiv)
 }
 
-function deleteCheck(event) {
-  const item = event.target
+function deleteTodo(e) {
+  const item = e.target
 
-  // Check mark
+  // Check mark button
   if (item.classList[0] === 'complete-button') {
     const todo = item.parentElement
     todo.classList.toggle('completed')
+    console.log(todo)
   }
 
-  // Delete todo
+  // Delete todo button
   if (item.classList[0] === 'trash-button') {
-    // e.target.parentElement.remove();
     const todo = item.parentElement
-    todo.classList.add('fall')
+    // todo.classList.add('fall')
 
     removeLocalTodos(todo)
     todo.addEventListener('transitionend', (e) => {
@@ -72,11 +73,13 @@ function deleteCheck(event) {
 
 function filterTodo(e) {
   const todos = todoList.childNodes
-  todos.forEach((todo) => {
+  todos.forEach(function (todo) {
+    // Switch structure for selecting what to display
     switch (e.target.value) {
       case 'all':
         todo.style.display = 'flex'
         break
+
       case 'completed':
         if (todo.classList.contains('completed')) {
           todo.style.display = 'flex'
@@ -84,6 +87,7 @@ function filterTodo(e) {
           todo.style.display = 'none'
         }
         break
+
       case 'uncompleted':
         if (!todo.classList.contains('completed')) {
           todo.style.display = 'flex'
@@ -95,7 +99,6 @@ function filterTodo(e) {
 }
 
 function saveLocalTodos(todo) {
-  // Checking if there are things already saved
   let todos
   if (localStorage.getItem('todos') === null) {
     todos = []
@@ -106,16 +109,6 @@ function saveLocalTodos(todo) {
   localStorage.setItem('todos', JSON.stringify(todos))
 }
 
-function saveLocalTodos(todo) {
-  let todos
-  if (localStorage.getItem('todos') === null) {
-    todos = []
-  } else {
-    todos = JSON.parse(localStorage.getItem('todos'))
-  }
-  todos.push(todo)
-  localStorage.setItem('todos', JSON.stringify(todos))
-}
 function removeLocalTodos(todo) {
   let todos
   if (localStorage.getItem('todos') === null) {
@@ -139,22 +132,26 @@ function getTodos() {
     //Create todo div
     const todoDiv = document.createElement('div')
     todoDiv.classList.add('todo')
+
     //Create list
     const newTodo = document.createElement('li')
     newTodo.innerText = todo
     newTodo.classList.add('todo-item')
     todoDiv.appendChild(newTodo)
     todoInput.value = ''
+
     //Create Completed Button
     const completedButton = document.createElement('button')
     completedButton.innerHTML = `<i class="fas fa-check"></i>`
     completedButton.classList.add('complete-button')
     todoDiv.appendChild(completedButton)
+
     //Create trash button
     const trashButton = document.createElement('button')
     trashButton.innerHTML = `<i class="fas fa-trash"></i>`
     trashButton.classList.add('trash-button')
     todoDiv.appendChild(trashButton)
+
     //attach final Todo
     todoList.appendChild(todoDiv)
   })
