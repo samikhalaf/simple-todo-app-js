@@ -22,10 +22,10 @@ Maybe I'll add some cool features in the future, such as:
 ## Regarding developement
 
 - Plain JavaScript (ES6) programming, no frameworks and no crazy libraries 💪🏿.
-- Web Responsive design, with CSS variables and cool stuff.
+- Mobile first / responsive design, with CSS variables and cool stuff.
 - Usage of BEM methodology for organising styles.
 - All your tasks are stored in your localStorage's browser. Only you have access about the things you write down.
-- No cookies and no surveillance 👌🏿
+- No cookies and no surveillance, this website stores 0% of user data 👌🏿
 
 Enjoy!
 
